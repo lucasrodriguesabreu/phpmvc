@@ -44,7 +44,6 @@ class AnnotationDriver extends AbstractAnnotationDriver
     protected $entityAnnotationClasses = [
         Mapping\Entity::class => 1,
         Mapping\MappedSuperclass::class => 2,
-        Mapping\Embeddable::class => 3,
     ];
 
     /**
@@ -277,8 +276,6 @@ class AnnotationDriver extends AbstractAnnotationDriver
         /* @var $property \ReflectionProperty */
         foreach ($class->getProperties() as $property) {
             if ($metadata->isMappedSuperclass && ! $property->isPrivate()
-                ||
-                $metadata->isEmbeddedClass && $property->getDeclaringClass()->getName() !== $class->getName()
                 ||
                 $metadata->isInheritedField($property->name)
                 ||
