@@ -2,10 +2,10 @@
 
 namespace Alura\Cursos\Helper;
 
-trait RenderizadordeHtmlTrait{
-
-    public function renderizaHtml(string $caminhoTemplate, array $dados): string{
-        
+trait RenderizadorDeHtmlTrait
+{
+    public function renderizaHtml(string $caminhoTemplate, array $dados): string
+    {
         extract($dados);
         ob_start();
         require __DIR__ . '/../../view/' . $caminhoTemplate;
@@ -13,9 +13,4 @@ trait RenderizadordeHtmlTrait{
 
         return $html;
     }
-
-
 }
-
-
-?>

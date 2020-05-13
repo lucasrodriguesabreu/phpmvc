@@ -1,13 +1,14 @@
 <?php
 
-use Alura\Cursos\Controller\{
+use Alura\Cursos\Controller\{CursosEmJson,
+    CursosEmXml,
     Deslogar,
-    Exclusao, 
-    FormularioEdicao, 
-    FormularioLogin, 
-    FormularioInsercao, 
-    ListarCursos, 
-    Persistencia, 
+    Exclusao,
+    FormularioEdicao,
+    FormularioInsercao,
+    FormularioLogin,
+    ListarCursos,
+    Persistencia,
     RealizarLogin};
 
 return [
@@ -19,4 +20,7 @@ return [
     '/login' => FormularioLogin::class,
     '/realiza-login' => RealizarLogin::class,
     '/logout' => Deslogar::class,
+    '/buscarCursosEmJson' => CursosEmJson::class,
+    '/buscarCursosEmXml' => CursosEmXml::class
 ];
+
